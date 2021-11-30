@@ -7,6 +7,9 @@ source_path = sys.path[0] + '\\' + 'source'
 result_path = sys.path[0]
 result_dir_name = result_path + '\\' + 'result'
 
+if not os.path.exists(result_dir_name):
+    os.mkdir(result_dir_name)
+
 dirs = []
 
 
@@ -20,7 +23,10 @@ def my_read_csv(filepath, filename):
     length = l
 
     i = 0
-    for b in a[i:i + 30]
+    data = np.array(csv_data.values)
+    aa = data[0:, 1]
+    for b in aa[i:i + 30]:
+        b[29]
 
 
 def check_file(file_path):
