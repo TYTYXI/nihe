@@ -24,9 +24,23 @@ def my_read_csv(filepath, filename):
 
     i = 0
     data = np.array(csv_data.values)
+    mode = ""
     aa = data[0:, 1]
-    for b in aa[i:i + 30]:
-        b[29]
+    max_point = np.max(aa)
+    count = 0
+    while (True):
+        bb = aa[i:i + 200]
+        i += 80
+        if any(np.array(bb) == max_point):
+            mode = "A"
+            print(filename + "  A")
+            break
+        elif bb[199] < bb[0]:
+            mode = "B"
+            count += 1
+            if count == 5:
+                print(filename + "  B")
+                break
 
 
 def check_file(file_path):
